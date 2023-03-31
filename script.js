@@ -15,8 +15,8 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 // adding a click event for the generate password button
 getPassword.addEventListener("click", function () {
-  ps = generatePassword();
-  document.getElementById("#password").placeholder = ps;
+  callOnGeneratePassword = generatePassword();
+  document.getElementById("#password").placeholder = callOnGeneratePassword;
 });
 
 
@@ -74,13 +74,20 @@ function generatePassword(){
         chosenCriterias = upperCase
     }
 
-//       //for loop that randomizes a password for the user
-//     for (var i = 0; i < userInput; i++){
-//       var selectedCriteria = chosenCriterias[Math.floor]
-//     }
-// }
+      //for loop that randomizes a password for the user
+    for (var i = 0; i < userInput; i++){
+      var selectedCriteria = chosenCriterias[Math.floor(Math.random() * chosenCriterias.length)];
+      finalPassword.push(selectedCriteria);
+    }
 
+    var callOnGeneratePassword = finalPassword.join("");
+    UserData(callOnGeneratePassword);
+    return callOnGeneratePassword;
+}
 
+function UserData(callOnGeneratePassword){
+  document.getElementById("password").textContent = callOnGeneratePassword;
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
