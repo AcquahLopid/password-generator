@@ -77,6 +77,7 @@ function generatePassword(){
       //for loop that randomizes a password for the user
     for (var i = 0; i < userInput; i++){
       var selectedCriteria = chosenCriterias[Math.floor(Math.random() * chosenCriterias.length)];
+      // pushed new randomized item to the array
       finalPassword.push(selectedCriteria);
     }
 
@@ -103,3 +104,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// COULDNT FIGURE THIS OUT :(
