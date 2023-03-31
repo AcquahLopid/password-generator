@@ -15,7 +15,7 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 
 // adding a click event for the generate password button
 getPassword.addEventListener("click", function () {
-  callOnGeneratePassword = generatePassword();
+  var callOnGeneratePassword = generatePassword();
   document.getElementById("#password").placeholder = callOnGeneratePassword;
 });
 
@@ -80,6 +80,7 @@ function generatePassword(){
       finalPassword.push(selectedCriteria);
     }
 
+    // joins arrays that were selected
     var callOnGeneratePassword = finalPassword.join("");
     UserData(callOnGeneratePassword);
     return callOnGeneratePassword;
